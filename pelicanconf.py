@@ -1,7 +1,7 @@
 
 
-AUTHOR          = '<your name>'  # use your name
-SITENAME        = 'title' # use title
+AUTHOR          = 'Tact Labs'  # use your name
+SITENAME        = 'sigpytest' # use title
 GITHUB_USERNAME = 'tactlabs' # use your username
 
 
@@ -54,6 +54,10 @@ DEFAULT_PAGINATION          = 10
 # Uncomment following line if you want document-relative URLs when developing
 # Use SITEURL for absolute paths; RELATIVE_URLS is typically for local preview
 RELATIVE_URLS = False
+
+# Ensure unique output paths
+ARTICLE_URL = '{slug}.html'
+ARTICLE_SAVE_AS = '{slug}.html'
 
 THEME               = 'themes/zurb-F5-basic'
 

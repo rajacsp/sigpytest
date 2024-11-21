@@ -1,11 +1,13 @@
 
+
+# pylint: disable=missing-function-docstring, invalid-name
+
 import os
 import json
 import subprocess
 from pathlib import Path
 from datetime import datetime
 import shutil
-import sys
 import random
 
 # Local
@@ -18,10 +20,10 @@ repo = Repo(os.getcwd())
 FOLDER_NAME = os.path.basename(repo.working_dir)
 
 # Directories
-NOTEBOOK_DIR = "./notebooks"  # Directory containing .ipynb files
-OUTPUT_DIR = "./content"     # Directory for .md files (Pelican content directory)
-DOCS_FOLDER = "./docs"
-GLOBAL_IMAGES_DIR = os.path.join(OUTPUT_DIR, "images")  # Central images directory
+NOTEBOOK_DIR        = "./notebooks"  # Directory containing .ipynb files
+OUTPUT_DIR          = "./content"     # Directory for .md files (Pelican content directory)
+DOCS_FOLDER         = "./docs"
+GLOBAL_IMAGES_DIR   = os.path.join(OUTPUT_DIR, "images")  # Central images directory
 
 def is_recently_modified(source_file, target_file):
     """
@@ -308,7 +310,8 @@ if __name__ == "__main__":
     Path(NOTEBOOK_DIR).mkdir(parents=True, exist_ok=True)
     Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
 
-    fresh = True if (len(sys.argv) > 1 and sys.argv[1] == "fresh") else False
+    # fresh = True if (len(sys.argv) > 1 and sys.argv[1] == "fresh") else False
+    fresh = True
 
     print(f'fresh: {fresh}')
 
@@ -330,5 +333,3 @@ if __name__ == "__main__":
         print("Site generated successfully!")
     except subprocess.CalledProcessError as e:
         print(f"Error generating site: {e}")
-
-
